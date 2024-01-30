@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    color: white;
+    background-color: #1d1d1d;
+    font-family: 'Inter',-apple-system, BlinkMacSystemFont,'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;;
+}
+
+.image-preview {
+    display: flex;
+}
+
+.image-preview__item {
+    width: 50%;
+}
+
+.image-preview__title {
+
+}
+
+.image-preview__image {
+    width: 400px;
+}

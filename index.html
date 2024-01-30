@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Uploadcare transformations</title>
+    <meta name="description" content="TODO"/>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<script type="module">
+  import * as LR from 'https://cdn.jsdelivr.net/npm/@uploadcare/blocks@0.30.0/web/lr-file-uploader-regular.min.js';
+
+  LR.registerBlocks(LR);
+
+</script>
+<lr-config
+    ctx-name="my-uploader"
+    pubkey="2b7f257e8ea0817ba746"
+    sourceList="local, url, camera, dropbox"
+></lr-config>
+<lr-file-uploader-regular
+    ctx-name="my-uploader"
+    css-src="https://cdn.jsdelivr.net/npm/@uploadcare/blocks@0.30.0/web/lr-file-uploader-regular.min.css"
+></lr-file-uploader-regular>
+
+
+<lr-upload-ctx-provider
+    id="kek"
+    ctx-name="my-uploader"
+/>
+
+
+<main>
+    <section class="image-preview">
+        <div class="image-preview__item">
+            <h3 class="image-preview__title">Original image</h3>
+            <img id="originalImage" class="image-preview__image" crossorigin="" alt="Original image">
+            <ul id="originalImageMetadata"></ul>
+        </div>
+        <div class="image-preview__item">
+            <h3 class="image-preview__title">Transformed image</h3>
+            <img id="transformedImage" class="image-preview__image" src="" alt="Transformed image">
+            <ul id="transformedImageMetadata"></ul>
+        </div>
+    </section>
+    <button id="format">Format</button>
+</main>
+
+<script src="index.js"></script>
+</body>
+</html>
