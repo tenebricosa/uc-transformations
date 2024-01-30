@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<header>
+    <div>
+        <img class="Intro_logo" width=200 src="https://ucarecdn.com/3b610a0a-780c-4750-a8b4-3bf4a8c90389/logo-transparent-inverted.svg" alt="">
+    </div>
+    <p class="Intro_about">Programmatically adjust your images on the fly to any required style and dimension</p>
+</header>
+
 <script type="module">
   import * as LR from 'https://cdn.jsdelivr.net/npm/@uploadcare/blocks@0.30.0/web/lr-file-uploader-regular.min.js';
 
@@ -19,6 +26,7 @@
     ctx-name="my-uploader"
     pubkey="2b7f257e8ea0817ba746"
     sourceList="local, url, camera, dropbox"
+    multiple="false"
 ></lr-config>
 <lr-file-uploader-regular
     ctx-name="my-uploader"
@@ -29,22 +37,25 @@
     ctx-name="my-uploader"
 />
 
-
-<main>
+<main id="content">
     <section class="image-preview">
         <div class="image-preview__item">
             <h3 class="image-preview__title">Original image</h3>
-            <img id="originalImage" class="image-preview__image" src="https://ucarecdn.com/869e907e-7ae6-4615-9271-93b633e806eb/" crossorigin="" alt="Original image">
+            <img id="originalImage" class="image-preview__image" crossorigin="" alt="Original image">
             <ul id="originalImageMetadata"></ul>
         </div>
-        <div class="image-preview__item">
+
+        <div class="image-preview__item image-preview__item--hidden" id="transformImageContainer">
             <h3 class="image-preview__title">Transformed image</h3>
             <img id="transformedImage" class="image-preview__image" src="" alt="Transformed image">
             <ul id="transformedImageMetadata"></ul>
         </div>
     </section>
     <section>
+        <h3 class="image-preview__title">Implement transformations</h3>
+
         <button id="formatButton">Convert to JPEG</button>
+        <button id="rotateLeft">Rotate left</button>
     </section>
 </main>
 

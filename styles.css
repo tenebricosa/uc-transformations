@@ -1,8 +1,18 @@
 body {
     margin: 0;
     color: white;
+    padding: 20px;
     background-color: #1d1d1d;
-    font-family: 'Inter',-apple-system, BlinkMacSystemFont,'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;;
+    font-family: 'Inter',-apple-system, BlinkMacSystemFont,'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+}
+
+header {
+    margin-bottom: 50px;
+}
+
+main {
+    display: none;
+    margin-top: 50px;
 }
 
 .image-preview {
@@ -11,6 +21,10 @@ body {
 
 .image-preview__item {
     width: 50%;
+}
+
+.image-preview__item--hidden {
+    display: none;
 }
 
 .image-preview__title {
