@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Uploadcare transformations</title>
-    <meta name="description" content="TODO"/>
+    <meta name="description" content="Transform your images with Uploadcare"/>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -24,10 +24,8 @@
     ctx-name="my-uploader"
     css-src="https://cdn.jsdelivr.net/npm/@uploadcare/blocks@0.30.0/web/lr-file-uploader-regular.min.css"
 ></lr-file-uploader-regular>
-
-
 <lr-upload-ctx-provider
-    id="kek"
+    id="uploader-provider"
     ctx-name="my-uploader"
 />
 
@@ -36,7 +34,7 @@
     <section class="image-preview">
         <div class="image-preview__item">
             <h3 class="image-preview__title">Original image</h3>
-            <img id="originalImage" class="image-preview__image" crossorigin="" alt="Original image">
+            <img id="originalImage" class="image-preview__image" src="https://ucarecdn.com/869e907e-7ae6-4615-9271-93b633e806eb/" crossorigin="" alt="Original image">
             <ul id="originalImageMetadata"></ul>
         </div>
         <div class="image-preview__item">
@@ -45,7 +43,9 @@
             <ul id="transformedImageMetadata"></ul>
         </div>
     </section>
-    <button id="format">Format</button>
+    <section>
+        <button id="formatButton">Convert to JPEG</button>
+    </section>
 </main>
 
 <script src="index.js"></script>
